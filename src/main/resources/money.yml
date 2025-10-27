@@ -1,0 +1,92 @@
+# 经济系统配置
+# 您可以添加任何经济系统的插件名称
+
+# 自定义称号配置
+custom-title:
+  # 创建自定义称号的基础价格（可以在每个经济系统中单独设置 custom-price 覆盖）
+  base-price: 1000
+  # 允许的颜色代码
+  allowed-colors:
+    - "&0"
+    - "&1"
+    - "&2"
+    - "&3"
+    - "&4"
+    - "&5"
+    - "&6"
+    - "&7"
+    - "&8"
+    - "&9"
+    - "&a"
+    - "&b"
+    - "&c"
+    - "&d"
+    - "&e"
+    - "&f"
+    - "&k"
+    - "&l"
+    - "&m"
+    - "&n"
+    - "&o"
+    - "&r"
+  # 最大长度
+  max-length: 16
+  # 最小长度
+  min-length: 2
+  # 禁止的词语
+  banned-words:
+    - "admin"
+    - "op"
+    - "owner"
+    - "staff"
+    - "fuck"
+    - "shit"
+    - "bitch"
+    - "asshole"
+    - "bastard"
+    - "nigger"
+    - "faggot"
+
+# 经济系统配置
+economy-systems:
+  # 内置经济系统
+  vault:
+    display-name: "金币"
+    enabled: true
+    cost: 1000.0
+    custom-price: 1500.0  # 自定义称号的特定价格，如果不设置则使用base-price
+    plugin: "Vault"
+    permission: ""
+
+  playerpoints:
+    display-name: "点券"
+    enabled: true
+    cost: 500.0
+    custom-price: 750.0  # 自定义称号的特定价格
+    plugin: "PlayerPoints"
+    permission: ""
+
+  titlecoins:
+    display-name: "称号币"
+    enabled: true
+    cost: 800.0
+    custom-price: 1200.0  # 自定义称号的特定价格
+    plugin: ""
+    permission: ""
+
+  # 示例：添加其他经济插件
+  # tokens:
+  #   display-name: "代币"
+  #   enabled: true
+  #   cost: 50.0
+  #   custom-price: 75.0
+  #   plugin: "TokenManager"
+  #   permission: "greattitle.custom.tokens"
+
+  # gems:
+  #   display-name: "宝石"
+  #   enabled: true
+  #   cost: 10.0
+  #   custom-price: 15.0
+  #   plugin: "GemsEconomy"
+  #   permission: "greattitle.custom.gems"

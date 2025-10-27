@@ -1,0 +1,75 @@
+# GreatTitle 插件配置
+
+# 数据库设置
+database:
+  type: "SQLite" # SQLite 或 MySQL
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "greattitle"
+    username: "username"
+    password: "password"
+
+# 插件设置
+settings:
+  # 是否在玩家头顶显示称号
+  head-display: true
+  # 是否在Tab列表显示称号
+  tablist-display: true
+  # 是否在聊天中显示称号
+  chat-display: true
+  # GUI大小 (必须是9的倍数)
+  gui-size: 54
+  # 切换称号冷却时间（秒）
+  switch-cooldown: 5
+
+# 颜色代码支持
+color-support:
+  # 是否启用颜色代码支持
+  enabled: true
+  # 是否支持十六进制颜色代码 (1.16+)
+  hex-colors: true
+  # 颜色代码字符 (& 或 §)
+  color-character: "&"
+
+# 粒子效果支持
+particle-support:
+  # 是否启用粒子效果
+  enabled: true
+  # 支持的粒子插件
+  supported-plugins:
+    - "SuperTrails"
+    - "SuperTrailsPro"
+    - "PlayerParticles"
+
+title-cards:
+  random:
+    enabled: true
+    item: PAPER
+    name: "§6随机称号卡"
+    lore:
+      - "§7右键使用获得一个随机称号"
+      - "§e类型: 随机"
+    first-join: true
+    # 随机称号池 - 可以配置多个可能的称号ID
+    title-pool:
+      - "warrior"
+      - "mage"
+      - "archer"
+      - "assassin"
+  fixed:
+    enabled: true
+    item: MAP
+    name: "§6新手称号卡"
+    lore:
+      - "§7右键使用获得固定称号"
+      - "§e类型: 固定"
+    first-join: true
+    title: "newbie"
+
+# 权限设置
+permissions:
+  greattitle.use:
+    default: true
+  greattitle.admin:
+    default: op

@@ -1,0 +1,96 @@
+# 奖励配置
+# 每个奖励的配置格式：
+# 奖励ID:
+#   display-name: 显示名称
+#   description: 描述列表
+#   required-titles: 所需称号数量
+#   commands: 执行的命令列表
+#   permission: 需要的权限（可选）
+#   repeatable: 是否可重复领取（true/false）
+
+# 示例奖励1: 拥有5个称号的奖励
+reward_5_titles:
+  display-name: "§6初级收藏家"
+  description:
+    - "§7恭喜你收集了5个称号!"
+    - "§e奖励内容:"
+    - "  §7- 1000游戏币"
+    - "  §7- 10点券"
+  required-titles: 5
+  commands:
+    - "eco give %player% 1000"
+    - "points give %player% 10"
+  permission: ""
+  repeatable: false
+
+# 示例奖励2: 拥有10个称号的奖励
+reward_10_titles:
+  display-name: "§e中级收藏家"
+  description:
+    - "§7恭喜你收集了10个称号!"
+    - "§e奖励内容:"
+    - "  §7- 5000游戏币"
+    - "  §7- 50点券"
+    - "  §7- 1个钻石"
+  required-titles: 10
+  commands:
+    - "eco give %player% 5000"
+    - "points give %player% 50"
+    - "give %player% diamond 1"
+  permission: ""
+  repeatable: false
+
+# 示例奖励3: 拥有20个称号的奖励
+reward_20_titles:
+  display-name: "§6高级收藏家"
+  description:
+    - "§7恭喜你收集了20个称号!"
+    - "§e奖励内容:"
+    - "  §7- 10000游戏币"
+    - "  §7- 100点券"
+    - "  §7- 5个钻石"
+    - "  §7- 1个精英宝箱"
+  required-titles: 20
+  commands:
+    - "eco give %player% 10000"
+    - "points give %player% 100"
+    - "give %player% diamond 5"
+    - "give %player% chest 1"
+  permission: ""
+  repeatable: false
+
+# 示例奖励4: 拥有30个称号的奖励
+reward_30_titles:
+  display-name: "§c称号大师"
+  description:
+    - "§7恭喜你收集了30个称号!"
+    - "§e奖励内容:"
+    - "  §7- 20000游戏币"
+    - "  §7- 200点券"
+    - "  §7- 10个钻石"
+    - "  §7- 3个精英宝箱"
+    - "  §7- 专属称号权限"
+  required-titles: 30
+  commands:
+    - "eco give %player% 20000"
+    - "points give %player% 200"
+    - "give %player% diamond 10"
+    - "give %player% chest 3"
+    - "lp user %player% permission set greattitle.master true"
+  permission: ""
+  repeatable: false
+
+# 示例奖励5: 每周可重复领取的奖励
+weekly_reward:
+  display-name: "§b每周称号奖励"
+  description:
+    - "§7每周可领取的称号奖励"
+    - "§e奖励内容:"
+    - "  §7- 500游戏币"
+    - "  §7- 5点券"
+  required-titles: 1
+  commands:
+    - "eco give %player% 500"
+    - "points give %player% 5"
+  permission: ""
+  repeatable: true

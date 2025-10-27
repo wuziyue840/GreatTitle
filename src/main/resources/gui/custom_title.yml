@@ -1,0 +1,41 @@
+# 自定义称号GUI配置
+gui-title: "选择支付方式"
+gui-size: 27
+
+# 经济系统物品配置
+economy-items:
+  vault:
+    material: "GOLD_INGOT"
+    display-name: "&6金币支付"
+    lore:
+      - "&7使用金币购买自定义称号"
+      - "&7价格: &e{cost} &7金币"
+      - ""
+      - "&7当前余额: &e{balance} &7金币"
+    slot: 10
+
+  playerpoints:
+    material: "EMERALD"
+    display-name: "&a点券支付"
+    lore:
+      - "&7使用点券购买自定义称号"
+      - "&7价格: &a{cost} &7点券"
+      - ""
+      - "&7当前余额: &a{balance} &7点券"
+    slot: 12
+
+  titlecoins:
+    material: "NAME_TAG"
+    display-name: "&e称号币支付"
+    lore:
+      - "&7使用称号币购买自定义称号"
+      - "&7价格: &e{cost} &7称号币"
+      - ""
+      - "&7当前余额: &e{balance} &7称号币"
+    slot: 14
+
+# 返回按钮配置
+back-button:
+  material: "ARROW"
+  display-name: "&c返回"
+  slot: 22

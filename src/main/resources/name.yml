@@ -1,0 +1,25 @@
+# 名称显示配置
+
+# Tab列表显示设置
+tablist-display:
+  enabled: true
+  format: "%greattitle_active% %player_name%"
+
+# 聊天显示设置
+chat-display:
+  enabled: true
+  format: "%greattitle_active% <%player_name%>"
+
+# 头顶前缀显示设置
+head-prefix:
+  enabled: true
+  # 显示模式:
+  #   - "inline": 称号和玩家名在同一行
+  #   - "above_name": 称号显示在玩家名字上方（推荐）
+  display-mode: "above_name"
+  format: "%greattitle_active% %player_name%"
+  default-prefix: "§7"
+
+# 占位符说明:
+# %greattitle_active% - 玩家当前活跃的称号
+# %player_name% - 玩家名称

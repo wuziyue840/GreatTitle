@@ -1,0 +1,486 @@
+# GreatTitle 称号配置文件
+# 此文件包含所有可用称号的配置
+
+# 称号配置格式说明:
+# 称号ID:
+#   display-name: "显示名称"           # 在GUI中显示的名称
+#   content: "称号内容"               # 实际显示的称号内容，支持颜色代码
+#   description: []                  # 称号介绍，支持多行
+#   type: "获取类型"                  # NOT, VAULT, PLAYER_POINTS, COIN, ITEM_STACK, PERMISSION, ACTIVITY
+#   price: 0.0                       # 金币价格 (VAULT类型时使用)
+#   points: 0                        # 点券价格 (PLAYER_POINTS类型时使用)
+#   coins: 0                         # 称号币价格 (COIN类型时使用)
+#   permission: ""                   # 所需权限 (PERMISSION类型时使用)
+#   required-item: ""                # 所需物品 (ITEM_STACK类型时使用)
+#   rgb: false                       # 是否支持RGB颜色
+#   duration: 0                      # 持续时间（天），0表示永久
+#   switch-cooldown: 0               # 切换冷却时间（秒），0使用全局设置
+#   show-in-shop: true               # 是否在商城中显示
+#   shop-expire-time: ""             # 商城下架时间（格式: yyyy-MM-dd-HH-mm），空表示永久
+#   particle-effects: []             # 粒子效果列表
+#   buffs:                          # BUFF效果列表
+#     效果名称:
+#       type: "效果类型"              # 药水效果类型 (SPEED, JUMP, STRENGTH等)
+#       amplifier: 0                 # 效果等级 (0=I级, 1=II级)
+#       duration: 0                  # 持续时间（秒），0表示永久
+#       ambient: true                # 是否为环境效果
+#       show-particles: true         # 是否显示粒子
+#       show-icon: true              # 是否显示图标
+#   currencies:                     # 多种货币成本
+#     货币类型: 数量                  # 支持的货币类型: VAULT, PLAYER_POINTS, COIN, TOKEN等
+
+# 新手称号 - 无条件获取
+newbie:
+  display-name: "§a新手"
+  content: "&a[新手] "
+  description:
+    - "§7欢迎来到服务器的初始称号"
+    - "§7拥有这个称号代表你刚刚开始冒险"
+    - ""
+    - "§e效果:"
+    - "  §7- 无特殊效果"
+  type: "NOT"
+  price: 0.0
+  points: 0
+  coins: 0
+  permission: ""
+  required-item: ""
+  rgb: false
+  duration: 0
+  switch-cooldown: 0
+  show-in-shop: true
+  shop-expire-time: ""
+  particle-effects: []
+  buffs: {}
+  currencies: {}
+
+# VIP称号 - 金币或点券购买
+vip:
+  display-name: "§6VIP"
+  content: "&#FFD700[VIP] "  # 十六进制金色
+  description:
+    - "§6尊贵的VIP会员称号"
+    - "§7展示你在服务器中的特殊身份"
+    - ""
+    - "§e效果:"
+    - "  §7- §b速度 I (永久)"
+    - "  §7- §a跳跃提升 I (永久)"
+    - "  §7- §d火焰粒子效果"
+    - "  §7- §c爱心粒子效果"
+  type: "VAULT"
+  price: 1000.0
+  points: 0
+  coins: 0
+  permission: ""
+  required-item: ""
+  rgb: true
+  duration: 30
+  switch-cooldown: 10
+  show-in-shop: true
+  shop-expire-time: "2024-12-31-23-59"
+  particle-effects:
+    - "flame"
+    - "heart"
+    - "spark"
+  buffs:
+    speed:
+      type: "SPEED"
+      amplifier: 1
+      duration: 0
+      ambient: true
+      show-particles: true
+      show-icon: true
+    jump:
+      type: "JUMP"
+      amplifier: 1
+      duration: 0
+      ambient: true
+      show-particles: true
+      show-icon: true
+  currencies:
+    VAULT: 1000.0
+    PLAYER_POINTS: 500
+
+# 土豪称号 - 点券或称号币购买
+rich:
+  display-name: "§e土豪"
+  content: "&e[土豪] "
+  description:
+    - "§e彰显财富的豪华称号"
+    - "§7拥有这个称号证明你是真正的土豪"
+    - ""
+    - "§e效果:"
+    - "  §7- §c力量 I (永久)"
+    - "  §7- §6暴击粒子效果"
+    - "  §7- §b魔法暴击粒子效果"
+  type: "PLAYER_POINTS"
+  price: 0.0
+  points: 500
+  coins: 0
+  permission: ""
+  required-item: ""
+  rgb: true
+  duration: 7
+  switch-cooldown: 5
+  show-in-shop: true
+  shop-expire-time: "2024-12-01-18-00"
+  particle-effects:
+    - "crit"
+    - "magic_crit"
+    - "reddust"
+  buffs:
+    strength:
+      type: "INCREASE_DAMAGE"
+      amplifier: 1
+      duration: 0
+      ambient: true
+      show-particles: true
+      show-icon: true
+  currencies:
+    PLAYER_POINTS: 800
+    COIN: 50
+
+# 管理员称号 - 权限获取
+admin:
+  display-name: "§4管理员"
+  content: "&4[管理员] "
+  description:
+    - "§4服务器管理员的专属称号"
+    - "§7拥有最高权限的管理者身份象征"
+    - ""
+    - "§e效果:"
+    - "  §7- §b速度 II (永久)"
+    - "  §7- §a跳跃提升 II (永久)"
+    - "  §7- §c力量 II (永久)"
+    - "  §7- §5附魔台粒子效果"
+    - "  §7- §d末地门粒子效果"
+    - "  §7- §6龙息粒子效果"
+  type: "PERMISSION"
+  price: 0.0
+  points: 0
+  coins: 0
+  permission: "greattitle.admin"
+  required-item: ""
+  rgb: true
+  duration: 0
+  switch-cooldown: 0
+  show-in-shop: false
+  shop-expire-time: ""
+  particle-effects:
+    - "enchant"
+    - "portal"
+    - "dragon_breath"
+  buffs:
+    speed:
+      type: "SPEED"
+      amplifier: 2
+      duration: 0
+      ambient: true
+      show-particles: true
+      show-icon: true
+    jump:
+      type: "JUMP"
+      amplifier: 2
+      duration: 0
+      ambient: true
+      show-particles: true
+      show-icon: true
+    strength:
+      type: "INCREASE_DAMAGE"
+      amplifier: 2
+      duration: 0
+      ambient: true
+      show-particles: true
+      show-icon: true
+  currencies: {}
+
+# 战士称号 - 称号币或金币购买
+warrior:
+  display-name: "§c战士"
+  content: "&c[战士] "
+  description:
+    - "§c勇猛战士的专属称号"
+    - "§7适合喜欢近战搏斗的玩家"
+    - ""
+    - "§e效果:"
+    - "  §7- §c力量 I (1小时)"
+    - "  §7- §7伤害抗性 I (1小时)"
+    - "  §7- §8暴击粒子效果"
+    - "  §7- §7烟雾粒子效果"
+  type: "COIN"
+  price: 0.0
+  points: 0
+  coins: 100
+  permission: ""
+  required-item: ""
+  rgb: true
+  duration: 15
+  switch-cooldown: 5
+  show-in-shop: true
+  shop-expire-time: ""
+  particle-effects:
+    - "crit"
+    - "smoke"
+    - "lava"
+  buffs:
+    strength:
+      type: "INCREASE_DAMAGE"
+      amplifier: 1
+      duration: 3600
+      ambient: true
+      show-particles: true
+      show-icon: true
+    resistance:
+      type: "DAMAGE_RESISTANCE"
+      amplifier: 1
+      duration: 3600
+      ambient: true
+      show-particles: true
+      show-icon: true
+  currencies:
+    COIN: 100
+    VAULT: 500.0
+
+# 法师称号 - 活动获取
+mage:
+  display-name: "§b法师"
+  content: "&b[法师] "
+  description:
+    - "§b神秘法师的专属称号"
+    - "§7掌握强大魔法的智者象征"
+    - ""
+    - "§e效果:"
+    - "  §7- §a生命恢复 I (30分钟)"
+    - "  §7- §6火焰抗性 I (30分钟)"
+    - "  §7- §d法术粒子效果"
+    - "  §7- §5女巫粒子效果"
+  type: "ACTIVITY"
+  price: 0.0
+  points: 0
+  coins: 0
+  permission: ""
+  required-item: ""
+  rgb: true
+  duration: 30
+  switch-cooldown: 8
+  show-in-shop: true
+  shop-expire-time: "2024-10-31-20-00"
+  particle-effects:
+    - "spell"
+    - "witch"
+    - "enchant"
+    - "music"
+  buffs:
+    regeneration:
+      type: "REGENERATION"
+      amplifier: 1
+      duration: 1800
+      ambient: true
+      show-particles: true
+      show-icon: true
+    fire_resistance:
+      type: "FIRE_RESISTANCE"
+      amplifier: 1
+      duration: 1800
+      ambient: true
+      show-particles: true
+      show-icon: true
+  currencies: {}
+
+# 猎人称号 - 物品兑换
+hunter:
+  display-name: "§2猎人"
+  content: "&2[猎人] "
+  description:
+    - "§2熟练猎人的专属称号"
+    - "§7擅长追踪和狩猎的专家"
+    - ""
+    - "§e效果:"
+    - "  §7- §5夜视 (永久)"
+    - "  §7- §8云朵粒子效果"
+    - "  §7- §1水滴粒子效果"
+  type: "ITEM_STACK"
+  price: 0.0
+  points: 0
+  coins: 0
+  permission: ""
+  required-item: "DIAMOND_SWORD:1"
+  rgb: true
+  duration: 10
+  switch-cooldown: 3
+  show-in-shop: true
+  shop-expire-time: "2024-09-30-12-00"
+  particle-effects:
+    - "cloud"
+    - "water"
+  buffs:
+    night_vision:
+      type: "NIGHT_VISION"
+      amplifier: 0
+      duration: 0
+      ambient: true
+      show-particles: true
+      show-icon: true
+  currencies: {}
+
+# 天使称号 - 多种货币组合
+angel:
+  display-name: "§f天使"
+  content: "&f[天使] "
+  description:
+    - "§f神圣天使的纯洁称号"
+    - "§7象征光明与希望的使者"
+    - ""
+    - "§e效果:"
+    - "  §7- §a生命恢复 II (永久)"
+    - "  §7- §6伤害吸收 I (永久)"
+    - "  §7- §d爱心粒子效果"
+    - "  §7- §b音符粒子效果"
+  type: "VAULT"
+  price: 2000.0
+  points: 0
+  coins: 0
+  permission: ""
+  required-item: ""
+  rgb: true
+  duration: 60
+  switch-cooldown: 15
+  show-in-shop: true
+  shop-expire-time: "2024-11-15-14-30"
+  particle-effects:
+    - "heart"
+    - "music"
+    - "cloud"
+  buffs:
+    regeneration:
+      type: "REGENERATION"
+      amplifier: 2
+      duration: 0
+      ambient: true
+      show-particles: true
+      show-icon: true
+    absorption:
+      type: "ABSORPTION"
+      amplifier: 1
+      duration: 0
+      ambient: true
+      show-particles: true
+      show-icon: true
+  currencies:
+    VAULT: 2000.0
+    PLAYER_POINTS: 1000
+    COIN: 200
+    TOKEN: 25
+
+# 恶魔称号 - 高成本强力称号
+demon:
+  display-name: "§8恶魔"
+  content: "&8[恶魔] "
+  description:
+    - "§8黑暗恶魔的恐怖称号"
+    - "§7来自深渊的毁灭力量"
+    - ""
+    - "§e效果:"
+    - "  §7- §c力量 III (永久)"
+    - "  §7- §6火焰抗性 II (永久)"
+    - "  §7- §4火焰粒子效果"
+    - "  §7- §8熔岩粒子效果"
+  type: "PLAYER_POINTS"
+  price: 0.0
+  points: 2000
+  coins: 0
+  permission: ""
+  required-item: ""
+  rgb: true
+  duration: 90
+  switch-cooldown: 20
+  show-in-shop: true
+  shop-expire-time: "2024-08-20-16-45"
+  particle-effects:
+    - "flame"
+    - "lava"
+    - "reddust"
+    - "smoke"
+  buffs:
+    strength:
+      type: "INCREASE_DAMAGE"
+      amplifier: 3
+      duration: 0
+      ambient: true
+      show-particles: true
+      show-icon: true
+    fire_resistance:
+      type: "FIRE_RESISTANCE"
+      amplifier: 2
+      duration: 0
+      ambient: true
+      show-particles: true
+      show-icon: true
+  currencies:
+    PLAYER_POINTS: 2000
+    COIN: 500
+    TOKEN: 100
+
+# 传奇称号 - 终极称号
+legend:
+  display-name: "§5传奇"
+  content: "&5[传奇] "
+  description:
+    - "§5传说中的终极称号"
+    - "§7只有真正的英雄才能获得"
+    - ""
+    - "§e效果:"
+    - "  §7- §b速度 III (永久)"
+    - "  §7- §c力量 III (永久)"
+    - "  §7- §7伤害抗性 III (永久)"
+    - "  §7- §a生命恢复 III (永久)"
+    - "  §7- §d所有顶级粒子效果"
+  type: "PERMISSION"
+  price: 0.0
+  points: 0
+  coins: 0
+  permission: "greattitle.legend"
+  required-item: ""
+  rgb: true
+  duration: 0
+  switch-cooldown: 0
+  show-in-shop: false
+  shop-expire-time: ""
+  particle-effects:
+    - "portal"
+    - "dragon_breath"
+    - "enchant"
+    - "spell"
+    - "witch"
+    - "flame"
+    - "heart"
+  buffs:
+    speed:
+      type: "SPEED"
+      amplifier: 3
+      duration: 0
+      ambient: true
+      show-particles: true
+      show-icon: true
+    strength:
+      type: "INCREASE_DAMAGE"
+      amplifier: 3
+      duration: 0
+      ambient: true
+      show-particles: true
+      show-icon: true
+    resistance:
+      type: "DAMAGE_RESISTANCE"
+      amplifier: 3
+      duration: 0
+      ambient: true
+      show-particles: true
+      show-icon: true
+    regeneration:
+      type: "REGENERATION"
+      amplifier: 3
+      duration: 0
+      ambient: true
+      show-particles: true
+      show-icon: true
+  currencies: {}

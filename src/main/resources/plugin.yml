@@ -1,0 +1,38 @@
+name: GreatTitle
+version: '0.0.1'
+main: xyz.tolite.greatTitle.GreatTitle
+api-version: '1.12'
+authors: [ toilet ]
+description: 伟大的称号系统插件
+author: Tolite
+website: https://example.com
+
+commands:
+  grt:
+    description: 打开称号系统
+    usage: /<command> [shop|use|remove|display|settings|check|reload|give|clear]
+    permission: greattitle.use
+    aliases: [grts, greattitle]
+
+permissions:
+  greattitle.use:
+    description: 使用称号系统的基本权限
+    default: true
+  greattitle.admin:
+    description: 称号系统管理权限
+    default: op
+  greattitle.*:
+    description: 所有称号系统权限
+    default: op
+    children:
+      greattitle.use: true
+      greattitle.admin: true
+
+depend: []
+softdepend:
+  - PlaceholderAPI
+  - Vault
+  - PlayerPoints
+  - SuperTrails
+  - SuperTrailsPro
+  - PlayerParticles
